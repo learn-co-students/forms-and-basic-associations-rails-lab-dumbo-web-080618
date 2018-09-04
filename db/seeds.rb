@@ -159,4 +159,46 @@ genres = Hash[[
   "Synthpop"
 ].map { |genre| [genre, Genre.find_or_create_by(name: genre)] }]
 
+artists = Hash[[
+  "Britnet Spears",
+  "Maria Carey",
+  "Jay Z",
+  "Beyonce",
+  "The Weekend",
+  "Ed Sheeran",
+  "Toto",
+  "Journey",
+  "Bon Jovi",
+  "Bonnie Tyler",
+  "Men At Work",
+  "Queen",
+  "Kansas",
+  "Nirvana",
+  "Billy Joel",
+  "Aerosmith",
+  "Phil Colin",
+  "John Legend",
+  "Chicago",
+  "Muse",
+  "Foreigner",
+  "Coldplay",
+  "Gorillaz",
+  "Daft Punk"
+].map { |artist| [artist, Artist.find_or_create_by(name: artist)] }]
 
+Song.create(title: "Happy Day", artist_id: 1, genre_id: 1)
+Song.create(title: "Warning", artist_id: 2, genre_id: 1)
+Song.create(title: "Good Morning", artist_id: 3, genre_id: 2)
+Song.create(title: "Water In Me", artist_id: 5, genre_id: 7)
+Song.create(title: "Cry Over You", artist_id: 9, genre_id: 4)
+Song.create(title: "Make Yourself", artist_id: 3, genre_id: 7)
+Song.create(title: "Never See You Again", artist_id: 10, genre_id: 4)
+Song.create(title: "Goodbye", artist_id: 6, genre_id: 14)
+Song.create(title: "Where Are You", artist_id: 9, genre_id: 18)
+Song.create(title: "Hand In Hand", artist_id: 3, genre_id: 3)
+
+Note.create(content: "none", song_id: 1)
+Note.create(content: "junk", song_id: 3)
+Note.create(content: "bit", song_id: 2)
+Note.create(content: "funk", song_id: 6)
+Note.create(content: "another", song_id: 8)

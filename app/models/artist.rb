@@ -1,3 +1,4 @@
 class Artist < ActiveRecord::Base
-  # add associations here
+  # add associations
+  has_many :songs
 end
