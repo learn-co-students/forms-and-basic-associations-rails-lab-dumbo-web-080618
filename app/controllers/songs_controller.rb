@@ -12,7 +12,11 @@ class SongsController < ApplicationController
   end
 
   def create
-    @song = Song.new(song_params)
+      @song = Song.new(song_params)
+    # byebug
+
+
+
 
     if @song.save
       redirect_to @song
@@ -29,6 +33,7 @@ class SongsController < ApplicationController
     @song = Song.find(params[:id])
 
     @song.update(song_params)
+
 
     if @song.save
       redirect_to @song
@@ -47,7 +52,15 @@ class SongsController < ApplicationController
   private
 
   def song_params
-    params.require(:song).permit(:title)
+    params.require(:song).permit(:title, :artist_name, :genre_name, :genre_id, note_contents:[])
   end
 end
 
+
+# <%= f.label :note_content  %>
+# <%= f.text_field :note_contents %>
+
+
+# <% Genre.all.each do |genre| %>
+#   <input id="<%= genre.name %>" type="checkbox" name="genres[]" value="<%= genre.id %>"><%= genre.name %>
+# <% end %>
