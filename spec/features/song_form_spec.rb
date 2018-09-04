@@ -7,7 +7,7 @@ describe "the song form", :type => :feature do
     fill_in :song_title, with: 'Little Earthquakes'
     find('input[name="commit"]').click
     expect(Song.last.title).to eq 'Little Earthquakes'
-  end
+  end 
 
   it "creates a song with an artist" do
     visit '/songs/new'
